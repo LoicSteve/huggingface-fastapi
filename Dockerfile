@@ -1,4 +1,4 @@
-FROM python:3.10
+FROM python:3.8
 
 # Set the working directory
 COPY ./requirements.txt /webbapp/requirements.txt
