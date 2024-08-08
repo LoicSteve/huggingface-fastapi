@@ -1,18 +1,13 @@
 FROM python:3.8
 
-# Set the working directory
-COPY ./requirements.txt /webbapp/requirements.txt
+COPY ./requirements.txt /webapp/requirements.txt
 
-WORKDIR /webbapp
+WORKDIR /webapp
 
-# Install dependencies
 RUN pip install -r requirements.txt
 
-# Copy the current directory contents into the container at /webbapp
-COPY webapp/* /webbapp
+COPY webapp/* /webapp
 
 ENTRYPOINT [ "uvicorn" ]
 
-
 CMD [ "--host", "0.0.0.0", "main:app" ]
-
